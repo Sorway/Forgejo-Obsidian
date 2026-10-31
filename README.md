@@ -1,11 +1,66 @@
-# Obsidian — thème sombre pour Forgejo
+<div align="center">
 
-Noir profond légèrement bleuté, accent mauve grisé et désaturé, surfaces discrètes et focus clavier visibles. Sans police distante, JavaScript ou modification des templates. Le thème hérite de `forgejo-dark` pour conserver la coloration du code, les diffs et les couleurs des statuts.
+# Obsidian
+
+### Un thème sombre et sobre pour Forgejo.
+
+Des noirs nuancés, un accent mauve discret et une interface qui laisse la place au code.
+
+![Forgejo](https://img.shields.io/badge/Forgejo-th%C3%A8me_personnalis%C3%A9-FB923C?style=for-the-badge&logo=forgejo&logoColor=white&labelColor=202025)
+![CSS](https://img.shields.io/badge/CSS-un_seul_fichier-A29BB8?style=for-the-badge&labelColor=202025)
+![Apparence](https://img.shields.io/badge/Apparence-sombre-CECED7?style=for-the-badge&labelColor=202025)
+![Testé jusqu’à Forgejo 17.0.1](https://img.shields.io/badge/Test%C3%A9_jusqu%E2%80%99%C3%A0-Forgejo_17.0.1-86C995?style=for-the-badge&labelColor=202025)
+
+[Installation](#installation) · [Palette](#palette) · [Personnalisation](#personnalisation)
+
+</div>
+
+---
+
+## Une interface plus douce
+
+Obsidian habille Forgejo de surfaces anthracite, de bordures discrètes et de textes hiérarchisés. Le thème s’appuie sur `forgejo-dark` pour hériter de la coloration syntaxique, des diffs et des couleurs de statut.
+
+- **Noirs neutres** : plusieurs niveaux de profondeur pour distinguer le fond, les panneaux et les menus.
+- **Accent mauve grisé** : liens, sélections et interactions assortis.
+- **Lecture confortable** : textes secondaires adoucis et focus clavier visibles.
+- **Intégration légère** : un fichier CSS, sans JavaScript, police distante ni modification des templates.
+- **Détails natifs préservés** : arrondis, avatars et indicateurs conservent leurs formes Forgejo.
+
+## Palette
+
+| Usage | Couleur | Valeur CSS |
+| :--- | :--- | :--- |
+| Fond principal | `#111114` | `--color-body` |
+| Panneaux | `#18181C` | `--color-box-body` |
+| Menus | `#202025` | `--color-menu` |
+| Bordures | `#33333C` | `--color-secondary` |
+| Texte principal | `#DDDDE4` | `--color-text` |
+| Accent mauve | `#A29BB8` | `--color-primary` |
 
 ## Installation
 
-1. Copier `theme-obsidian.css` dans `$FORGEJO_CUSTOM/public/assets/css/` sur le serveur. Le dossier personnalisé se trouve dans Administration du site → Configuration, ou avec `forgejo help`.
-2. Dans la section `[ui]` du fichier `app.ini`, ajouter `obsidian` à la liste `THEMES` existante, puis définir `DEFAULT_THEME = obsidian` si souhaité. Exemple pour une liste standard :
+L’installation nécessite un accès aux fichiers de l’instance et à sa configuration `app.ini`.
+
+### 1. Copier le thème
+
+Placer [theme-obsidian.css](theme-obsidian.css) dans le dossier personnalisé de Forgejo :
+
+```text
+$FORGEJO_CUSTOM/
+└── public/
+    └── assets/
+        └── css/
+            └── theme-obsidian.css
+```
+
+Le chemin du dossier personnalisé est indiqué dans **Administration du site → Configuration**. Avec Docker, utiliser le dossier personnalisé persistant monté dans le conteneur.
+
+> Le fichier importe `./theme-forgejo-dark.css`, fourni par Forgejo. Conserver ce nom et laisser le thème natif disponible dans les assets servis par l’instance.
+
+### 2. Déclarer le thème
+
+Dans la section `[ui]` de `app.ini`, ajouter `obsidian` à la liste `THEMES` existante. Pour une configuration standard :
 
 ```ini
 [ui]
@@ -13,26 +68,37 @@ THEMES = forgejo-auto,forgejo-light,forgejo-dark,obsidian
 DEFAULT_THEME = obsidian
 ```
 
-3. Redémarrer Forgejo, puis choisir `obsidian` dans les paramètres d’apparence du compte. Un compte avec une préférence enregistrée peut ignorer le thème par défaut.
+Conserver les autres thèmes déjà déclarés. `DEFAULT_THEME` est facultatif : il définit l’apparence des visiteurs et des comptes sans préférence personnelle.
 
-La page d’accueil native reçoit aussi le fond noir, des titres plus sobres et des blocs assortis. Pour appliquer le thème aux visiteurs non connectés et aux nouveaux comptes, définir `DEFAULT_THEME = obsidian` dans `[ui]`. Les comptes existants conservent leur préférence personnelle. Les styles d’accueil ciblent la structure native `.home` ; une page d’accueil personnalisée peut demander une adaptation.
+### 3. Activer Obsidian
 
-Le CSS importe le thème natif à l’URL relative `./theme-forgejo-dark.css` ; les deux sont servis depuis `/assets/css/`. Ne pas renommer le fichier natif ni le remplacer.
+Redémarrer Forgejo, puis sélectionner **obsidian** dans les paramètres d’apparence du compte. Recharger la page avec **Ctrl + F5** pour actualiser le CSS en cache.
+
+Les comptes ayant déjà choisi un thème conservent leur préférence, même si `DEFAULT_THEME` change.
 
 ## Personnalisation
 
-Les composants conservent les arrondis natifs de Forgejo. Les ombres des cartes et fenêtres modales sont supprimées pour un rendu plus sobre. Les avatars et indicateurs de statut gardent leur forme native.
+Les couleurs sont regroupées dans le bloc `:root` au début du CSS. Modifier les variables concernées pour adapter la palette :
 
-Les couleurs se règlent au début du CSS. `--color-primary` est l’accent principal ; les variables `--color-primary-*` définissent ses nuances. `--color-body`, `--color-box-body` et `--color-nav-bg` définissent les surfaces.
+```css
+:root {
+  --color-body: #111114;
+  --color-box-body: #18181c;
+  --color-nav-bg: #0c0c0f;
+  --color-primary: #a29bb8;
+}
+```
 
-## Vérification et compatibilité
+Pour changer l’accent, ajuster aussi les variables `--color-primary-*` afin de garder des survols, sélections et états actifs cohérents.
 
-Variables comparées au thème officiel de la branche `forgejo` le 31 octobre 2026. Aucune instance Forgejo n’était disponible pour valider le rendu réel. Vérifier sur votre version les dépôts, issues, formulaires, menus, diffs et éditeurs avant activation générale ; les personnalisations CSS peuvent évoluer entre versions.
+La page d’accueil native possède des styles dédiés : fond assorti, titres sobres et blocs harmonisés. Une page d’accueil personnalisée peut nécessiter des ajustements.
 
-Pour revenir au thème natif, choisir `forgejo-dark` et restaurer la valeur précédente de `DEFAULT_THEME` si modifiée.
+### Compatibilité
 
-Documentation : https://forgejo.org/docs/latest/contributor/customization/
-Source du thème natif : https://codeberg.org/forgejo/forgejo/src/branch/forgejo/web_src/css/themes/theme-forgejo-dark.css
+**Testé jusqu’à Forgejo 17.0.1**.
 
+Le thème dépend des variables et de la structure HTML de Forgejo. La compatibilité avec les versions suivantes reste à vérifier. Après une mise à jour, vérifier les dépôts, issues, formulaires, menus, diffs et éditeurs.
 
+### Revenir au thème natif
 
+Sélectionner **forgejo-dark** dans les paramètres d’apparence et, si nécessaire, restaurer la valeur précédente de `DEFAULT_THEME`.
