@@ -1,0 +1,201 @@
+/* Obsidian for Forgejo. Install next to theme-forgejo-dark.css.
+ * Inherits native syntax highlighting, diff states and semantic colors.
+ */
+@import url("./theme-forgejo-dark.css");
+
+:root {
+  color-scheme: dark;
+  --is-dark-theme: true;
+  --steel-900: #0c0c0f;
+  --steel-850: #111114;
+  --steel-800: #161619;
+  --steel-750: #1b1b20;
+  --steel-700: #232329;
+  --steel-650: #2c2c34;
+  --steel-600: #393942;
+  --steel-550: #50505c;
+  --steel-500: #656571;
+  --steel-450: #7b7b88;
+  --steel-400: #92929e;
+  --steel-350: #a3a3af;
+  --steel-300: #b4b4bf;
+  --steel-250: #c1c1cb;
+  --steel-200: #ceced7;
+  --steel-150: #dcdce4;
+  --steel-100: #e8e8ee;
+
+  --color-primary: #a29bb8;
+  --color-primary-contrast: #15131b;
+  --color-primary-dark-1: #b3adc6;
+  --color-primary-dark-2: #c1bbd1;
+  --color-primary-dark-3: #cec9db;
+  --color-primary-dark-4: #dcd8e6;
+  --color-primary-light-1: #938ba9;
+  --color-primary-light-2: #847b9b;
+  --color-primary-light-3: #756c8c;
+  --color-primary-light-4: #665d7c;
+  --color-primary-light-5: #554d69;
+  --color-primary-light-6: #423c52;
+  --color-primary-light-7: #302b3c;
+  --color-primary-alpha-10: #a29bb81a;
+  --color-primary-alpha-20: #a29bb833;
+  --color-primary-alpha-30: #a29bb84d;
+  --color-primary-alpha-40: #a29bb866;
+  --color-primary-alpha-50: #a29bb880;
+  --color-primary-alpha-60: #a29bb899;
+  --color-primary-alpha-70: #a29bb8b3;
+  --color-primary-alpha-80: #a29bb8cc;
+  --color-primary-alpha-90: #a29bb8e6;
+  --color-primary-hover: #b3adc6;
+  --color-primary-active: #938ba9;
+  --color-secondary-alpha-10: #2c2c341a;
+  --color-secondary-alpha-20: #2c2c3433;
+  --color-secondary-alpha-30: #2c2c344d;
+  --color-secondary-alpha-40: #2c2c3466;
+  --color-secondary-alpha-50: #2c2c3480;
+  --color-secondary-alpha-60: #2c2c3499;
+  --color-secondary-alpha-70: #2c2c34b3;
+  --color-secondary-alpha-80: #2c2c34cc;
+  --color-secondary-alpha-90: #2c2c34e6;
+
+  /* Explicit neutral text and borders prevent blue-grey inherited surfaces. */
+  --color-text: #dddde4;
+  --color-text-dark: #f0f0f4;
+  --color-text-light: #c4c4ce;
+  --color-text-light-1: #b4b4bf;
+  --color-text-light-2: #a4a4b0;
+  --color-text-light-3: #9696a3;
+  --color-secondary: #33333c;
+  --color-secondary-dark-1: #41414c;
+  --color-secondary-dark-2: #50505c;
+  --color-secondary-dark-3: #656571;
+  --color-secondary-dark-4: #7b7b88;
+  --color-secondary-light-1: #2c2c34;
+  --color-secondary-light-2: #25252c;
+  --color-secondary-light-3: #202025;
+  --color-secondary-light-4: #1b1b20;
+  --color-secondary-light-5: #18181c;
+  --color-secondary-light-6: #151518;
+  --color-secondary-light-7: #111114;
+  --color-secondary-light-8: #0c0c0f;
+  --color-text-link: #bcb3d3;
+  --color-text-link-visited: #bcb3d3;
+  --color-label-bg: #2c2c34;
+  --color-label-text: #ceced7;
+
+  --color-body: #111114;
+  --color-box-header: #202025;
+  --color-box-body: #18181c;
+  --color-box-body-highlight: #27272e;
+  --color-header-wrapper: #151518;
+  --color-header-wrapper-transparent: #15151800;
+  --color-nav-bg: #0c0c0f;
+  --color-nav-hover-bg: #27272e;
+  --color-secondary-nav-bg: #111114;
+  --color-footer: #0c0c0f;
+  --color-menu: #202025;
+  --color-card: #1b1b20;
+  --color-hover: #2a2a32;
+  --color-active: #32323b;
+  --color-button: #2c2c34;
+  --color-input-background: #141417;
+  --color-input-border: #41414c;
+  --color-input-border-hover: #92929e;
+  --color-placeholder-text: #9696a3;
+  --color-light-border: #ffffff16;
+  --color-shadow: #00000040;
+  --color-code-bg: #141417;
+  --color-markup-code-block: #141417;
+  --color-markup-code-inline: #27272e;
+  --color-editor-line-highlight: #24242c;
+  --color-console-bg: #101013;
+  --color-console-fg: #e8e8ee;
+  --color-console-fg-subtle: #b4b4bf;
+  --color-console-border: #393942;
+  --color-console-menu-bg: #1b1b20;
+  --color-console-menu-border: #41414c;
+  --color-console-active-bg: #2c2c34;
+  --color-accent: #a29bb8;
+  --color-small-accent: #756c8c;
+  --color-highlight-fg: #dcd8e6;
+  --color-highlight-bg: #a29bb826;
+  --color-selection-bg: #a29bb8;
+  --color-selection-fg: #15131b;
+  --color-reaction-bg: #ffffff08;
+  --color-reaction-active-bg: #a29bb826;
+  --color-reaction-hover-bg: #a29bb833;
+  --color-tooltip-bg: #202025f5;
+  --color-tooltip-text: #e8e8ee;
+  --color-overlay-backdrop: #0c0c10cc;
+}
+
+/* Native Forgejo border radii are preserved. */
+.ui.card,
+.ui.cards > .card,
+.ui.modal {
+  box-shadow: none;
+}
+
+.ui.form input:not([type="checkbox"]):not([type="radio"]):focus,
+.ui.form textarea:focus,
+.ui.input input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-10);
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+}
+
+html {
+  scrollbar-color: #50505c #111114;
+}
+
+/* Forgejo's default landing page, including anonymous visitors. */
+.page-content.home {
+  background: var(--color-body);
+  color: var(--color-text);
+}
+
+.home .hero {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.home .hero h1 {
+  color: #eeecf2;
+  letter-spacing: -0.035em;
+}
+
+.home .hero h2 {
+  color: var(--color-text-light-3);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home .hero .svg {
+  color: var(--color-primary);
+}
+
+.home .ui.card,
+.home .ui.cards > .card,
+.home .ui.segment {
+  background: var(--color-box-body);
+  border-color: var(--color-secondary);
+}
+
+.home a:not(.button) {
+  color: var(--color-primary);
+}
+
+.home a:not(.button):hover {
+  color: var(--color-primary-hover);
+}
+
+
+
