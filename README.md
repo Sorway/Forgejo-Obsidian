@@ -4,8 +4,8 @@
 
 Thème sombre pour Forgejo, avec des fonds anthracite et un accent mauve.
 
-![Forgejo](https://img.shields.io/badge/Forgejo-202025?style=flat&logo=forgejo&logoColor=FB923C)
-![Testé jusqu’à 17.0.1](https://img.shields.io/badge/test%C3%A9_jusqu%E2%80%99%C3%A0-17.0.1-A29BB8?style=flat&labelColor=202025)
+![Forgejo](https://img.shields.io/badge/Forgejo-202025?style=flat-square&logo=forgejo&logoColor=FB923C)
+![Testé jusqu’à 17.0.1](https://img.shields.io/badge/test%C3%A9_jusqu%E2%80%99%C3%A0-17.0.1-A29BB8?style=flat-square&labelColor=202025)
 
 [Installation](#installation) · [Palette](#palette) · [Personnalisation](#personnalisation)
 
