@@ -2,30 +2,16 @@
 
 # Obsidian
 
-### Un thème sombre et sobre pour Forgejo.
+Thème sombre pour Forgejo, avec des fonds anthracite et un accent mauve.
 
-Des noirs nuancés, un accent mauve discret et une interface qui laisse la place au code.
-
-![Forgejo](https://img.shields.io/badge/Forgejo-th%C3%A8me_personnalis%C3%A9-FB923C?style=for-the-badge&logo=forgejo&logoColor=white&labelColor=202025)
-![CSS](https://img.shields.io/badge/CSS-un_seul_fichier-A29BB8?style=for-the-badge&labelColor=202025)
-![Apparence](https://img.shields.io/badge/Apparence-sombre-CECED7?style=for-the-badge&labelColor=202025)
-![Testé jusqu’à Forgejo 17.0.1](https://img.shields.io/badge/Test%C3%A9_jusqu%E2%80%99%C3%A0-Forgejo_17.0.1-86C995?style=for-the-badge&labelColor=202025)
+![Forgejo](https://img.shields.io/badge/Forgejo-202025?style=flat&logo=forgejo&logoColor=FB923C)
+![Testé jusqu’à 17.0.1](https://img.shields.io/badge/test%C3%A9_jusqu%E2%80%99%C3%A0-17.0.1-A29BB8?style=flat&labelColor=202025)
 
 [Installation](#installation) · [Palette](#palette) · [Personnalisation](#personnalisation)
 
 </div>
 
----
-
-## Une interface plus douce
-
-Obsidian habille Forgejo de surfaces anthracite, de bordures discrètes et de textes hiérarchisés. Le thème s’appuie sur `forgejo-dark` pour hériter de la coloration syntaxique, des diffs et des couleurs de statut.
-
-- **Noirs neutres** : plusieurs niveaux de profondeur pour distinguer le fond, les panneaux et les menus.
-- **Accent mauve grisé** : liens, sélections et interactions assortis.
-- **Lecture confortable** : textes secondaires adoucis et focus clavier visibles.
-- **Intégration légère** : un fichier CSS, sans JavaScript, police distante ni modification des templates.
-- **Détails natifs préservés** : arrondis, avatars et indicateurs conservent leurs formes Forgejo.
+Le thème étend `forgejo-dark` : la coloration du code, les diffs et les couleurs de statut restent ceux de Forgejo. L’installation se limite à un fichier CSS.
 
 ## Palette
 
@@ -91,13 +77,13 @@ Les couleurs sont regroupées dans le bloc `:root` au début du CSS. Modifier le
 
 Pour changer l’accent, ajuster aussi les variables `--color-primary-*` afin de garder des survols, sélections et états actifs cohérents.
 
-La page d’accueil native possède des styles dédiés : fond assorti, titres sobres et blocs harmonisés. Une page d’accueil personnalisée peut nécessiter des ajustements.
+Le thème couvre aussi la page d’accueil native. Une page personnalisée peut demander des ajustements.
 
-### Compatibilité
+## Compatibilité
 
 **Testé jusqu’à Forgejo 17.0.1**.
 
-Le thème dépend des variables et de la structure HTML de Forgejo. La compatibilité avec les versions suivantes reste à vérifier. Après une mise à jour, vérifier les dépôts, issues, formulaires, menus, diffs et éditeurs.
+Les versions suivantes restent à tester.
 
 ### Revenir au thème natif
 
