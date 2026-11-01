@@ -20,8 +20,8 @@
   color: #d4d4d4 !important;
 }
 
-/* Variables, propriétés, attributs INI et clés YAML (.nt). */
-.chroma :is(.na, .nt, .nv, .vc, .vg, .vi, .vm) {
+/* Variables, propriétés, clés Groovy (.nl), attributs INI et clés YAML (.nt). */
+.chroma :is(.na, .nl, .nt, .nv, .vc, .vg, .vi, .vm) {
   color: #9cdcfe !important;
 }
 
