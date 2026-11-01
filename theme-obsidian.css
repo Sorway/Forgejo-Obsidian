@@ -1,5 +1,4 @@
 /* Obsidian for Forgejo. Install next to theme-forgejo-dark.css.
- * Inherits native syntax highlighting, diff states and semantic colors.
  */
 @import url("./theme-forgejo-dark.css");
 

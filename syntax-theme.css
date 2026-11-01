@@ -1,0 +1,68 @@
+/* VS Code Dark+ palette mapped to Chroma tokens (not TextMate scopes).
+ * !important overrides Forgejo's native token rules, including theme selectors.
+ * Keep token backgrounds untouched so diff and line highlights remain visible.
+ */
+.chroma {
+  color: #d4d4d4;
+  background-color: #1e1e1e;
+}
+
+/* Mots-clés */
+.chroma :is(.k, .kc, .kd, .kn, .kp, .kr) {
+  color: #569cd6 !important;
+}
+.chroma .kt {
+  color: #4ec9b0 !important;
+}
+
+/* Plain names and YAML scalar values retain the default foreground. */
+.chroma :is(.n, .nx, .l) {
+  color: #d4d4d4 !important;
+}
+
+/* Variables, propriétés, attributs INI et clés YAML (.nt). */
+.chroma :is(.na, .nt, .nv, .vc, .vg, .vi, .vm) {
+  color: #9cdcfe !important;
+}
+
+/* Fonctions */
+.chroma :is(.nf, .fm, .nb, .bp) {
+  color: #dcdcaa !important;
+}
+
+/* Classes et types */
+.chroma :is(.nc, .nn, .ne) {
+  color: #4ec9b0 !important;
+}
+
+/* Chaînes */
+.chroma :is(.s, .sa, .sb, .sc, .dl, .sd, .s1, .s2,
+            .sh, .si, .sr, .ss, .sx) {
+  color: #ce9178 !important;
+}
+.chroma .se {
+  color: #d7ba7d !important;
+}
+
+/* Nombres */
+.chroma :is(.m, .mb, .mf, .mh, .mi, .il, .mo) {
+  color: #b5cea8 !important;
+}
+
+/* Commentaires */
+.chroma :is(.c, .ch, .cm, .c1, .cs) {
+  color: #6a9955 !important;
+}
+.chroma :is(.cp, .cpf) {
+  color: #569cd6 !important;
+}
+
+/* Opérateurs et ponctuation */
+.chroma :is(.o, .ow, .p) {
+  color: #d4d4d4 !important;
+}
+
+/* Titres de sections INI */
+.chroma .gh {
+  color: #569cd6 !important;
+}
